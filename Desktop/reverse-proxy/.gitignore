@@ -1,0 +1,27 @@
+# استثناء ملفات النظام والملفات غير المهمة
+.DS_Store
+Thumbs.db
+node_modules/
+*.log
+*.tmp
+*.cache
+*.ini
+*.exe
+*.dll
+*.zip
+*.rar
+*.tar.gz
+*.7z
+
+# استثناء مجلدات النظام
+Application Data/
+Local Settings/
+Recent/
+SendTo/
+Voisinage d'impression/
+Voisinage réseau/
+
+# استثناء ملفات خاصة بـ Windows
+NTUSER.DAT*
+OneDrive/
+Desktop.ini
