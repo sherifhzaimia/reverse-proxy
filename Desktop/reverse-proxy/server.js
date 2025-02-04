@@ -3,14 +3,15 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const app = express();
 
-// إعداد الوكيل العكسي
 app.use('/', createProxyMiddleware({
-    target: 'https://sellthetrend.com', // استبدل هذا بالموقع الذي تريد إعادة توجيه الطلبات إليه
+    target: 'https://www.sellthetrend.com',
     changeOrigin: true,
-    secure: false,
+    onProxyRes: function (proxyRes, req, res) {
+        proxyRes.headers['x-frame-options'] = 'ALLOWALL';
+    }
 }));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`🔗 Proxy Server is running on port ${PORT}`);
+    console.log(`Reverse Proxy running on port ${PORT}`);
 });
